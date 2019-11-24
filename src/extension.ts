@@ -94,8 +94,7 @@ function generateHTMLCanvas(): string {
 	<body>	
 		<script>
 			var canvas = document.createElement('canvas');
-			canvas.width = 640;
-			canvas.height = 480;
+
 			document.body.appendChild(canvas);
 			var ctx = canvas.getContext('2d');
 	
@@ -106,6 +105,9 @@ function generateHTMLCanvas(): string {
 				var width = message.width;
 				var height = message.height;
 				var colorData = message.colorData;
+
+				canvas.width = width;
+				canvas.height = height;
 
 				for (var x = 0; x < width; x++){
 					for (var y = 0; y < height; y++){
